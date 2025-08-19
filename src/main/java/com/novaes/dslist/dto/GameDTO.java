@@ -5,7 +5,7 @@ import org.springframework.beans.BeanUtils;
 import com.novaes.dslist.entities.Game;
 
 public class GameDTO {
-	
+
 	private Long id;
 	private String title;
 	private Integer year;
@@ -18,7 +18,7 @@ public class GameDTO {
 	
 	public GameDTO() {
 	}
-
+	
 	public GameDTO(Game entity) {
 		BeanUtils.copyProperties(entity, this);
 	}
@@ -94,6 +94,4 @@ public class GameDTO {
 	public void setLongDescription(String longDescription) {
 		this.longDescription = longDescription;
 	}
-	
-	
 }
