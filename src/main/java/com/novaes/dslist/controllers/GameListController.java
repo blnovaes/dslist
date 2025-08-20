@@ -18,7 +18,7 @@ import com.novaes.dslist.services.GameService;
 
 @RestController
 @RequestMapping(value = "/lists")
-public class GameListController {
+public class GameListController { //Retorna as listas de jogos
 
 	@Autowired
 	private GameListService gameListService;
@@ -27,7 +27,7 @@ public class GameListController {
 	private GameService gameService;
 
 	@GetMapping(value = "/{id}")
-	public GameListDTO findById(@PathVariable Long id) {
+	public GameListDTO findById(@PathVariable Long id) { //Retorna uma determinada lista
 		GameListDTO result = gameListService.findById(id);
 		return result;
 	}
@@ -39,7 +39,7 @@ public class GameListController {
 	}
 
 	@GetMapping(value = "/{listId}/games")
-	public List<GameMinDTO> findGames(@PathVariable Long listId) {
+	public List<GameMinDTO> findGames(@PathVariable Long listId) { //Retorna os jogos de uma lista
 		List<GameMinDTO> result = gameService.findByGameList(listId);
 		return result;
 	}

@@ -13,20 +13,20 @@ import com.novaes.dslist.dto.GameMinDTO;
 import com.novaes.dslist.services.GameService;
 
 @RestController
-@RequestMapping(value = "/games")
+@RequestMapping(value = "/games") 
 public class GameController {
 
 	@Autowired
 	private GameService gameService;	
 
 	@GetMapping(value = "/{id}")
-	public GameDTO findById(@PathVariable Long id) {
+	public GameDTO findById(@PathVariable Long id) {  //Retorna com um jogo e com todos os campos
 		GameDTO result = gameService.findById(id);
 		return result;
 	}
 
 	@GetMapping
-	public List<GameMinDTO> findAll() {
+	public List<GameMinDTO> findAll() { //Retorna a lista com todos os jogos com alguns campos
 		List<GameMinDTO> result = gameService.findAll();
 		return result;
 	}
